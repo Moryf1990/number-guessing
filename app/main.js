@@ -8,20 +8,27 @@
 var msgDisplayEl = document.getElementById('msgDisplay');
 var userInputEl = document.getElementById('userInput');
 var submitBtnEl = document.getElementById('submitBtn');
-var number;
+var number= Math.round(Math.random()*(99)+1);
 
 // =============================================================================
 // Some example functions, to get you started. You can change, delete, add to
 // these however you like!
 // =============================================================================
 
+
 function generateNumber() {
-  return 5;
+ clearInput()
+var reset = Math.round(Math.random()*(99)+1);
+ return reset;
+ console.log(reset);
 };
 
 function clearInput() {
-  userInputEl.value = '';
+ userInputEl.value = '';
+
+
 };
+// console.log(number);
 
 // =============================================================================
 // The guessing game. Everytime the user clicks the button on the page, this
@@ -38,16 +45,33 @@ function clearInput() {
 
 function guessingGame(userInput) {
 
-  if (!userInput) {
-    if (submitBtnEl.value === "Start") {
-      number = generateNumber();
-      submitBtnEl.value = "Submit"
-    }
-    msgDisplayEl.innerHTML = "Please guess the number 5"
-  } else if (userInput === "5") {
-    msgDisplayEl.innerHTML = "You guessed it! Great job!"
-    clearInput();
-    submitBtnEl.value = "Play Again"
+
+
+
+
+if (!userInput) {
+if ((submitBtnEl.value === 'Start') || (submitBtnEl.value === 'Play Again')) {
+    number = generateNumber();
+    submitBtnEl.value = 'Submit';
   }
+  msgDisplayEl.innerHTML = 'Please guess between the number 1 and 100.';
+
+
+   
+
+ } else if (userInput == number) {
+  msgDisplayEl.innerHTML = 'You guessed it! Great job!';
+  clearInput();
+  submitBtnEl.value = 'Play Again';
+ } 
+else if (userInput < number) {
+  msgDisplay.innerHTML = 'Wrong, Your number is greater than what you guessed.';
+}
+
+
+else if (userInput > number) {
+ msgDisplay.innerHTML = 'Wrong, Your number is less than what you guessed.';
+}
 
 }
+console.log(number);

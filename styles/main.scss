@@ -1,0 +1,26 @@
+#userInput {
+	margin: 2em auto;
+	display: block;
+	background: yellow;
+	color: blue;
+	font-weight: bold;
+}
+
+#submitBtn {
+	margin: 0 auto;
+	display: block;
+	background: teal;
+	width: 10em;
+	border: none;
+	border-radius: 1em;
+	color: #fff;
+}
+
+#submitBtn:hover {
+	background: black;
+	color: orange;
+}
+
+#msgDisplay {
+	text-align: center;
+}
